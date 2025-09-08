@@ -1,0 +1,28 @@
+  generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Subscription {
+    id                  String   @id @default(cuid())
+  stripeCustomerId    String?  @unique
+  stripeSubscriptionId String?
+  email               String?
+  fullName            String?
+  organization        String?
+  phone               String?
+  address             String?
+  city                String?
+  state               String?
+  country             String?
+  postalCode          String?
+  packageName         String?
+  status              String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+}
