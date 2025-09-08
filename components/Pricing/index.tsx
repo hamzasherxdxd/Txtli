@@ -13,6 +13,7 @@ const Pricing = () => {
             <SectionHeader
               headerInfo={{
                 title: `PRICING PLANS`,
+                subtitle: '',
                 description: `Choose a Txtli plan that fits your real estate business. Whether you’re just starting out or scaling to multiple markets, our flexible pricing gives you the tools, automation, and support you need to close more deals.`,
               }}
             />
