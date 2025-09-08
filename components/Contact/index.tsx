@@ -33,7 +33,7 @@ const Contact = () => {
     }).then(res => res.json());
 
     const result = await stripe?.redirectToCheckout({ sessionId });
-    if (result.error) {
+    if (result && result.error) {
       console.error(result.error);
     }
 
