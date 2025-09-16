@@ -145,7 +145,7 @@ const Footer = () => {
                   <ul>
                     <li>
                       <a
-                        href="#"
+                        href="/privacy"
                         className="mb-3 inline-block hover:text-primary"
                       >
                         Privacy Policy
@@ -153,7 +153,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="#"
+                        href="/terms"
                         className="mb-3 inline-block hover:text-primary"
                       >
                         Terms and Conditions
@@ -265,7 +265,7 @@ const Footer = () => {
               className="animate_top w-full text-center"
             >
               <p>
-                &copy; {new Date().getFullYear()} Txtli. All rights reserved
+                &copy; {new Date().getFullYear()} Txtli. All rights reserved | Developed by <a href="https://haitchverse.com/" target="_blank">Haitchverse</a>
               </p>
             </motion.div>
 

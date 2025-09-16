@@ -16,7 +16,7 @@ const Contact = () => {
   const [hasMounted, setHasMounted] = React.useState(false);
   React.useEffect(() => {
     setHasMounted(true);
-    fetch('/api/pricing-plan').then(res => res.json()).then(data =>  setPlans(data));
+    fetch('/api/pricing-plan').then(res => res.json()).then(data => {setPlans(data); console.log(data)});
   }, []);
   if (!hasMounted) {
     return null;
@@ -46,14 +46,9 @@ const Contact = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    handleSubscribe("price_1RW8A9Cf4V9oKUMoRIEA0goX");
-    // const stripe = await stripePromise;
-    // const response = await fetch('/api/create-subscription/create', { method: "POST"});
-    // const session = await response.json();
-    // await stripe?.redirectToCheckout({ sessionId: session.id});
-    // // handleCheckOut();
-    alert(`Selected ${selectedPackage}`);
-  }
+    console.log(event.target.package.value);
+    handleSubscribe(event.target.package.value);
+  };
 
   return (
     <>
@@ -434,11 +429,11 @@ const Contact = () => {
                   /> */}
                   <select value={selectedPackage} onChange={handleChange} name="package" required className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-hidden dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2">
                     <option value="" selected disabled>Select Package</option>
-                    <option value="essential_yearly">Essential Plan - Yearly ($3,720.00/year)</option>
-                    <option value="essential_monthly">Essential Plan - Monthly ($349.00/month)</option>
-                    <option value="business_yearly">Business Plan - Yearly ($4,920.00/year)</option>
-                    <option value="business_monthly">Business Plan - Monthly ($449.00/month)</option>
-                    <option value="testing">Testing</option>
+                    <option value="price_1RP7IYCf4V9oKUMow4HqIbKQ">Essential Plan - Yearly ($3,720.00/year)</option>
+                    <option value="price_1RP7IYCf4V9oKUMop9F71lmK">Essential Plan - Monthly ($349.00/month)</option>
+                    <option value="price_1RyEp0Cf4V9oKUMoezjKW30o">Business Plan - Yearly ($4,920.00/year)</option>
+                    <option value="price_1RP7HCCf4V9oKUMo9YPNQMWv">Business Plan - Monthly ($449.00/month)</option>
+                    {/* <option value="price_1RW8A9Cf4V9oKUMoRIEA0goX">Testing</option> */}
                     <option value="custom">Custom</option>
                   </select>
                 </div>
@@ -471,10 +466,11 @@ const Contact = () => {
                       htmlFor="default-checkbox"
                       className="flex cursor-pointer select-none pl-5"
                     >
-                      By submitting this form, you consent to receiving marketing text messages from Refined Product LLC.
-                      Message frequency may vary. Msg and Data rates apply. Reply "STOP" to unsubscribe.
-                      Text HELP for assistance. Consent is not a condition of purchase.
-                      View Terms and Conditions & Privacy Policy.
+                      <span>
+                        By submitting this form, you consent to receiving marketing text messages from Refined Product LLC.
+                        Message frequency may vary. Msg and Data rates apply. Reply "STOP" to unsubscribe.
+                        Text HELP for assistance. Consent is not a condition of purchase.
+                        View <a href="/terms">Terms and Conditions</a>  & <a href="/privacy">Privacy Policy</a></span>.
                     </label>
                   </div>
 
