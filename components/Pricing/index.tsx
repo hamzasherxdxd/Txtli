@@ -47,7 +47,7 @@ const Pricing = () => {
               <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
                 <ul>
                   <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    30,000 outbound SMS/month
+                    30,000 outbound SMS/month($0.008 per SMS)
                   </li>
                   <li className="mb-4 text-black last:mb-0 dark:text-manatee">
                     Unlimited Users
@@ -141,7 +141,7 @@ const Pricing = () => {
               <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
                 <ul>
                   <li className="mb-4 text-black last:mb-0 dark:text-manatee">
-                    50,000 outbound SMS/month
+                    50,000 outbound SMS/month($0.008 per SMS)
                   </li>
                   <li className="mb-4 text-black last:mb-0 dark:text-manatee">
                     Unlimited Users
